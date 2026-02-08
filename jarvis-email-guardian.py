@@ -51,8 +51,10 @@ TELEGRAM_USERNAME = "@MauricioMF"  # Primary contact
 TRUSTED_SENDERS = [
     # Add trusted domains or emails here
     "jarvis.auto.001@gmail.com",  # Self
+    "mauriciomacedo7015@gmail.com",  # Primary human contact
     "@clawtasks.com",  # ClawTasks platform
     "@moltbook.com",   # Moltbook platform
+    "@gmail.com",  # Relaxed: respond to all Gmail (temporary)
 ]
 
 # Known spam patterns
