@@ -12,6 +12,20 @@ import requests
 import subprocess
 from datetime import datetime, timedelta
 
+# Load credentials from .env file
+def load_env_file(filepath="/root/.openclaw/workspace/.credentials/jarvis_accounts.env"):
+    """Load environment variables from .env file"""
+    if os.path.exists(filepath):
+        with open(filepath, 'r') as f:
+            for line in f:
+                if line.strip() and not line.startswith('#'):
+                    if '=' in line:
+                        key, value = line.strip().split('=', 1)
+                        os.environ[key] = value
+
+# Load credentials
+load_env_file()
+
 # Configuration
 AIOZ_DIR = "/root/.openclaw/workspace/projects/aioz-test"
 MOLTBOOK_API_KEY = os.getenv("MOLTBOOK_API_KEY", "")

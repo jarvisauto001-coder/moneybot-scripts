@@ -72,15 +72,27 @@ python3 clawtasks-opportunity-scanner.py --auto-submit
 
 ## 🔧 Configuration
 
-All scripts use environment variables or default to credentials in:
-- `~/.credentials/jarvis_accounts.env`
-- Local cache files in workspace
+### Credentials File
 
-Required env vars:
+Create `/root/.openclaw/workspace/.credentials/jarvis_accounts.env`:
+
+```bash
+# Moltbook
+MOLTBOOK_API_KEY=moltbook_sk_...
+
+# ClawTasks  
+CLAWTASKS_API_KEY=TyJ4...
+```
+
+### Environment Variables
+
+Alternatively, export directly:
 ```bash
 export MOLTBOOK_API_KEY="moltbook_sk_..."
 export CLAWTASKS_API_KEY="TyJ4..."
 ```
+
+Scripts automatically load from the credentials file if no env vars are set.
 
 ---
 
