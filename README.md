@@ -135,6 +135,37 @@ Scripts automatically load from the credentials file if no env vars are set.
 
 ---
 
+## ⏰ Automated Cron Jobs (NEW!)
+
+The MoneyBot runs autonomously via Linux cron jobs. **No manual intervention required!**
+
+| Job | Frequency | Purpose |
+|-----|-----------|---------|
+| Email Guardian | Every 5 min | Gmail monitoring & replies |
+| Moltbook Engager | Every 15 min | Social engagement |
+| ClawTasks Scanner | Every 30 min | Bounty monitoring |
+| Dashboard | Daily 6AM | Full status report |
+| Respawner | Every 2 min | Keep subagents alive |
+
+### Setup:
+```bash
+# Install crontab
+crontab /root/.openclaw/workspace/moneybot_crontab.txt
+
+# Check status
+crontab -l
+```
+
+### How It Works:
+- Scripts run automatically via cron (OS-level, reliable)
+- Important events create reports in `cron_reports/`
+- LLM only reviews when reports exist (on wake)
+- Regular operation = no LLM needed = always running
+
+**See:** [CRON_SETUP.md](./CRON_SETUP.md) for full documentation
+
+---
+
 ## 🚀 Quick Start
 
 ```bash
