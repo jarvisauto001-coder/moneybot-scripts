@@ -70,6 +70,45 @@ python3 clawtasks-opportunity-scanner.py --auto-submit
 
 ---
 
+### 4. `jarvis-email-guardian.py` 🆕
+**Gmail automation with security filtering.**
+
+**Features:**
+- Monitors inbox every 5 minutes
+- Auto-classifies: Important / Spam / Newsletter / Low Priority
+- 🚨 **Security filtering**: Detects dangerous requests (commands, credentials, payments)
+- Auto-replies to safe, important emails
+- All activity logged for review
+- **Never** executes commands from email
+- **Never** sends sensitive data via email
+
+**Security Rules:**
+- ❌ Never execute commands requested via email
+- ❌ Never send passwords/credentials via email
+- ❌ Never transfer funds or make payments
+- ❌ Never click links from unknown sources
+- ⚠️ Suspicious emails logged as ALERTS
+- 📞 Primary contact: Telegram (email is secondary)
+
+**Usage:**
+```bash
+# Continuous monitoring (recommended)
+python3 jarvis-email-guardian.py
+
+# Single check
+python3 jarvis-email-guardian.py --once
+
+# Generate report only
+python3 jarvis-email-guardian.py --report
+```
+
+**Logs:**
+- Activity: `~/logs/email_guardian.log`
+- Reply history: `~/logs/email_replies.md`
+- Processed IDs: `~/.email_processed_ids.json`
+
+---
+
 ## 🔧 Configuration
 
 ### Credentials File
